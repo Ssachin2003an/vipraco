@@ -8,7 +8,9 @@ const queryRoutes = require('./routes/query');
 const adminRoutes = require('./routes/admin');
 
 const app = express();
-app.use(cors());
+// CORS_ORIGIN set in Render env vars to your deployed frontend URL.
+// Falls back to open CORS for local dev.
+app.use(cors({ origin: process.env.CORS_ORIGIN || '*' }));
 app.use(express.json());
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', service: 'vipraco-backend' }));
