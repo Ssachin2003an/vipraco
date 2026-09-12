@@ -10,7 +10,7 @@ async function askLLM(userQuestion, contextFacts) {
   const geminiKey = process.env.GEMINI_API_KEY;
   const openaiKey = process.env.OPENAI_API_KEY;
 
-  const prompt = `You are VipraCo, an HR assistant. Answer ONLY using the facts below.
+  const prompt = `You are ProjectAthena, an HR assistant. Answer ONLY using the facts below.
 If the facts don't contain the answer, say you don't have that information and suggest contacting HR.
 Never invent data.
 

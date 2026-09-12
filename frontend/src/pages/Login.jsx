@@ -36,8 +36,9 @@ export default function Login() {
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
         <div className="flex items-center gap-2 mb-1">
           <div className="w-9 h-9 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold">V</div>
-          <h1 className="text-2xl font-bold text-gray-900">VipraCo</h1>
+          <h1 className="text-2xl font-bold text-gray-900">ProjectAthena</h1>
         </div>
+        <p className="text-xs text-gray-400 mb-1">by VipraCo</p>
         <p className="text-sm text-gray-500 mb-6">Your AI-driven HR assistant. Sign in to continue.</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">

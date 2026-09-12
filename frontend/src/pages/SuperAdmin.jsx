@@ -36,7 +36,7 @@ export default function SuperAdmin() {
         <div className="min-h-screen bg-gray-100">
         <header className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
             <div>
-            <h2 className="font-semibold text-gray-900">VipraCo Super Admin</h2>
+            <h2 className="font-semibold text-gray-900">ProjectAthena Super Admin</h2>
             <p className="text-xs text-gray-400">All organizations · platform-wide view</p>
             </div>
             <div className="flex items-center gap-4">
@@ -46,6 +46,7 @@ export default function SuperAdmin() {
             >
                 Refresh
             </button>
+            <Link to="/" className="text-xs text-brand-600 hover:underline">Back to chat</Link>
             <button onClick={logout} className="text-xs text-gray-400 hover:text-red-600">Sign out</button>
             </div>
         </header>

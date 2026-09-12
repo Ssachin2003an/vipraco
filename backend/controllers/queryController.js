@@ -23,7 +23,7 @@ exports.handleQuery = async (req, res) => {
 
     switch (intent) {
       case INTENTS.GREETING:
-        reply = `Hey ${first_name}! I'm VipraCo, your HR assistant. Ask me about your leave balance, salary, policies, or profile.`;
+        reply = `Hey ${first_name}! I'm ProjectAthena, your HR assistant. Ask me about your leave balance, salary, policies, or profile.`;
         break;
 
       case INTENTS.EMPLOYEE_ID:

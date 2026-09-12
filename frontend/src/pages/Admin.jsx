@@ -32,7 +32,7 @@ export default function Admin() {
         <div className="min-h-screen bg-gray-100">
         <header className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
             <div>
-            <h2 className="font-semibold text-gray-900">VipraCo Admin</h2>
+            <h2 className="font-semibold text-gray-900">ProjectAthena Admin</h2>
             <p className="text-xs text-gray-400">{user.org_name} · {user.organization_id}</p>
             </div>
             <div className="flex items-center gap-4">
@@ -118,12 +118,12 @@ export default function Admin() {
 }
 
 function Section({ title, children }) {
-    return (
-        <section className="bg-white rounded-xl border border-gray-200 p-5">
-        <h3 className="font-semibold text-gray-800 mb-3">{title}</h3>
-        {children}
-        </section>
-    );
+  return (
+    <section className="bg-white rounded-xl border border-gray-200 p-5">
+      <h3 className="font-semibold text-gray-800 mb-3">{title}</h3>
+      {children}
+    </section>
+  );
 }
 
 function Table({ columns, rows }) {
