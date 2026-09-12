@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import ChatMessage from '../components/ChatMessage.jsx';
 import SuggestedQuestions from '../components/SuggestedQuestions.jsx';
@@ -51,6 +52,11 @@ export default function Chat() {
           <p className="text-sm font-semibold text-gray-800">{user.first_name} {user.last_name}</p>
           <p className="text-xs text-gray-500">{user.role} · {user.department}</p>
           <p className="text-xs text-brand-600 font-medium mt-1">{user.org_name}</p>
+          {user.role === 'Admin' && (
+            <Link to="/admin" className="text-xs text-brand-600 hover:underline mt-2 inline-block">
+              Open admin panel →
+            </Link>
+          )}
         </div>
         <div className="flex-1 overflow-y-auto chat-scroll">
           <SuggestedQuestions onPick={send} />

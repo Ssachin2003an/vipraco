@@ -5,6 +5,7 @@ require('dotenv').config();
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const queryRoutes = require('./routes/query');
+const adminRoutes = require('./routes/admin');
 
 const app = express();
 app.use(cors());
@@ -14,6 +15,7 @@ app.get('/api/health', (req, res) => res.json({ status: 'ok', service: 'vipraco-
 
 app.use('/api/auth', authRoutes);
 app.use('/api/query', queryRoutes);
+app.use('/api/admin', adminRoutes);
 
 app.use((req, res) => res.status(404).json({ error: 'Route not found' }));
 

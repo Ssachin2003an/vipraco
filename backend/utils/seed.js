@@ -21,11 +21,14 @@ async function seed() {
   await Organization.insertMany([
     { organization_id: 'TECHCORP_IN', org_name: 'TechCorp Innovations Pvt. Ltd.', subscription_plan: 'Basic' },
     { organization_id: 'MGFAB_GLOBAL', org_name: 'Muzaffarpur Global Fabricators', subscription_plan: 'Standard' },
-    { organization_id: 'EDU_INST', org_name: 'BMS Education Institute', subscription_plan: 'Enterprise' }
+    { organization_id: 'EDU_INST', org_name: 'BMS Education Institute', subscription_plan: 'Enterprise' },
+    { organization_id: 'PLATFORM_HQ', org_name: 'VipraCo Platform', subscription_plan: 'Internal' }
   ]);
   console.log('Organizations seeded.');
 
   await User.insertMany([
+    // Platform (super admin — not tied to a customer org)
+    { user_id: 'PLAT_SUP001', organization_id: 'PLATFORM_HQ', first_name: 'Vipra', last_name: 'Admin', email: 'superadmin@vipraco.com', password_hash: demoPasswordHash, role: 'SuperAdmin', manager_id: null, date_of_joining: new Date('2024-01-01'), department: 'Platform', location: 'Remote' },
     // TechCorp Innovations
     { user_id: 'TCI_MGR001', organization_id: 'TECHCORP_IN', first_name: 'Ananya', last_name: 'Sharma', email: 'ananya.sharma@techcorp.com', password_hash: demoPasswordHash, role: 'Manager', manager_id: null, date_of_joining: new Date('2020-01-15'), department: 'Engineering', location: 'Bangalore' },
     { user_id: 'TCI_EMP002', organization_id: 'TECHCORP_IN', first_name: 'Rahul', last_name: 'Verma', email: 'rahul.verma@techcorp.com', password_hash: demoPasswordHash, role: 'Employee', manager_id: 'TCI_MGR001', date_of_joining: new Date('2021-03-10'), department: 'Engineering', location: 'Bangalore' },

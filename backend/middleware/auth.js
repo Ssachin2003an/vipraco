@@ -20,4 +20,23 @@ function authMiddleware(req, res, next) {
   }
 }
 
+// Only lets Admin-role users through. Must run after authMiddleware.
+function requireAdmin(req, res, next) {
+  if (!req.user || req.user.role !== 'Admin') {
+    return res.status(403).json({ error: 'Admin access required' });
+  }
+  next();
+}
+
+// Only lets SuperAdmin-role users through — cross-org visibility.
+// This is the one deliberate exception to the org_id scoping rule.
+function requireSuperAdmin(req, res, next) {
+  if (!req.user || req.user.role !== 'SuperAdmin') {
+    return res.status(403).json({ error: 'Super admin access required' });
+  }
+  next();
+}
+
 module.exports = authMiddleware;
+module.exports.requireAdmin = requireAdmin;
+module.exports.requireSuperAdmin = requireSuperAdmin;
